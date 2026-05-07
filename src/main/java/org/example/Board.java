@@ -10,7 +10,7 @@ public class Board
     private Tile[][] _tiles;
     private Random _random;
     private long _nextSeed;
-    private HashMap<String, Integer> _rules;
+    private HashMap<String, Double> _rules;
 
     public Board(int x, int y){
         _x = x;
@@ -54,6 +54,30 @@ public class Board
 
     public Tile getTile(int x, int y){
         return _tiles[y][x];
+    }
+
+    public Tile[][] getTiles(){
+        return _tiles;
+    }
+
+    public boolean hasRule(String rule){
+        if (_rules.containsKey(rule)){
+            if (_rules.get(rule) > 0){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public double getRule(String rule){
+        return _rules.getOrDefault(rule, 0.0);
+    }
+
+    public void setRule(String rule, double value){
+        _rules.put(rule, value);
+    }
+    public void incrementRule(String rule, double value){
+        _rules.put(rule, _rules.getOrDefault(rule, 0.0) + value);
     }
 }
 
