@@ -79,5 +79,13 @@ public class Board
     public void incrementRule(String rule, double value){
         _rules.put(rule, _rules.getOrDefault(rule, 0.0) + value);
     }
+
+    public int getX(){
+        return _x;
+    }
+
+    public int getY(){
+        return _y;
+    }
 }
 

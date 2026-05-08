@@ -12,6 +12,7 @@ public class Piece
     private ArrayList<Movement> _movement;
     private ImageIcon _image;
     private String _color;
+    private String _promotion;
 
     public Piece()
     {
@@ -22,6 +23,7 @@ public class Piece
         _effects = new HashMap<>();
         _movement = new ArrayList<>();
         _color = "Grey";
+        _promotion = "None";
     }
 
     public Piece(int value, ArrayList<Movement> movement, HashMap<String, Double> effects)
@@ -33,6 +35,7 @@ public class Piece
         _effects = effects;
         _movement = movement;
         _color = "Grey";
+        _promotion = "None";
     }
 
     public Piece(Piece piece) {
@@ -46,6 +49,7 @@ public class Piece
             _effects.put(effect, piece._effects.get(effect));
         }
         _color = piece._color;
+        _promotion = "None";
     }
 
     public Movement getFirstLegalMove(int sX, int sY, int dX, int dY, Board board)
@@ -103,6 +107,10 @@ public class Piece
 
     public void setColor(String color){
         _color = color;
+    }
+
+    public String getPromotion(){
+        return _promotion;
     }
 
 

@@ -48,10 +48,14 @@ public class Tile
 
     public boolean isOccupied()
     {
-        return _prom != null;
+        return _piece != null;
     }
 
     public boolean isPassable(){
         return isOccupied();
+    }
+
+    public String promotionType(){
+        return _prom;
     }
 }
