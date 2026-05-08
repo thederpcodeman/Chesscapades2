@@ -13,6 +13,8 @@ public class Piece
     protected String _name;
     protected String _color;
     protected String _promotion;
+    protected String _type;
+    protected boolean _royal;
 
     public Piece()
     {
@@ -24,18 +26,8 @@ public class Piece
         _movement = new ArrayList<>();
         _color = "Grey";
         _promotion = "None";
-    }
-
-    public Piece(int value, ArrayList<Movement> movement, HashMap<String, Double> effects)
-    {
-        _value = value;
-        _mana = 0;
-        _name = "Generic Piece";
-
-        _effects = effects;
-        _movement = movement;
-        _color = "Grey";
-        _promotion = "None";
+        _royal = false;
+        _type = "Error";
     }
 
     public Piece(Piece piece) {
@@ -50,6 +42,8 @@ public class Piece
         }
         _color = piece._color;
         _promotion = "None";
+        _royal = piece._royal;
+        _type = piece._type;
     }
 
     public Movement getFirstLegalMove(int sX, int sY, int dX, int dY, Board board)
@@ -119,6 +113,14 @@ public class Piece
 
     public void removeMove(Movement move){
         _movement.remove(move);
+    }
+
+    public void setRoyal(String royal){
+        _royal = royal;
+    }
+
+    public boolean isRoyal(){
+        return _royal;
     }
 
 
