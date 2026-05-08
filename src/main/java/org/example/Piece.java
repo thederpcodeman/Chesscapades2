@@ -6,19 +6,19 @@ import java.util.HashMap;
 
 public class Piece
 {
-    private double _value;
-    private double _mana;
-    private HashMap<String, Double> _effects;
-    private ArrayList<Movement> _movement;
-    private ImageIcon _image;
-    private String _color;
-    private String _promotion;
+    protected double _value;
+    protected double _mana;
+    protected HashMap<String, Double> _effects;
+    protected ArrayList<Movement> _movement;
+    protected String _name;
+    protected String _color;
+    protected String _promotion;
 
     public Piece()
     {
         _value = 0;
         _mana = 0;
-        _image = new ImageIcon("ChessLegacy/src/resources/default.png");
+        _name = "Generic Piece";
 
         _effects = new HashMap<>();
         _movement = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Piece
     {
         _value = value;
         _mana = 0;
-        _image = new ImageIcon("ChessLegacy/src/resources/default.png");
+        _name = "Generic Piece";
 
         _effects = effects;
         _movement = movement;
@@ -41,7 +41,7 @@ public class Piece
     public Piece(Piece piece) {
         _value = piece._value;
         _mana = piece._mana;
-        _image = piece._image;
+        _name = piece._name;
         _movement = new ArrayList<>();
         _movement.addAll(piece._movement);
         _effects = new HashMap<>();
@@ -79,14 +79,14 @@ public class Piece
         _effects.put(effect, value);
     }
 
-    public ImageIcon getImage()
+    public String getName()
     {
-        return _image;
+        return _name;
     }
 
-    public void setImage(ImageIcon image)
+    public void setName(String name)
     {
-        _image = image;
+        _name = name;
     }
 
     public void passive(){

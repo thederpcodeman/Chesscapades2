@@ -78,6 +78,7 @@ public class Game {
                 }
             }
         }
+        return board;
     }
 
     public Board defaultPromotion(int x, int y, Board board) {
