@@ -113,5 +113,13 @@ public class Piece
         return _promotion;
     }
 
+    public void addMove(Movement move){
+        _movement.add(move);
+    }
+
+    public void removeMove(Movement move){
+        _movement.remove(move);
+    }
+
 
 }
