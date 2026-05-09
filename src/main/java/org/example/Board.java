@@ -87,5 +87,9 @@ public class Board
     public int getY(){
         return _y;
     }
+
+    public Random getBoardRandom(){
+        return _random;
+    }
 }
 

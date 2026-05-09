@@ -15,6 +15,7 @@ public class Piece
     protected String _promotion;
     protected String _type;
     protected boolean _royal;
+    protected String _direction;
 
     public Piece()
     {
@@ -28,6 +29,7 @@ public class Piece
         _promotion = "None";
         _royal = false;
         _type = "Error";
+        _direction = "None";
     }
 
     public Piece(Piece piece) {
@@ -44,6 +46,7 @@ public class Piece
         _promotion = "None";
         _royal = piece._royal;
         _type = piece._type;
+        _direction = piece._direction;
     }
 
     public Movement getFirstLegalMove(int sX, int sY, int dX, int dY, Board board)
@@ -115,7 +118,7 @@ public class Piece
         _movement.remove(move);
     }
 
-    public void setRoyal(String royal){
+    public void setRoyal(Boolean royal){
         _royal = royal;
     }
 
