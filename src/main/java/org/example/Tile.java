@@ -26,7 +26,11 @@ public class Tile
         _prom = prom;
     }
     public Tile(Tile tile){
-        _piece = new Piece(tile._piece);
+        if (tile._piece == null){
+            _piece = null;
+        } else {
+            _piece = new Piece(tile._piece);
+        }
         _color = tile._color;
         _prom = tile._prom;
     }

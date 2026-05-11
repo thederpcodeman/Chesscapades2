@@ -7,6 +7,7 @@ abstract public class Movement
     public void performMove(int sX, int sY, int dX, int dY, Board board){
         Piece piece = board.getTile(sX, sY).getPiece();
         Tile dest = board.getTile(dX, dY);
+        Tile origin = board.getTile(sX, sY);
         if (isSpell()){
             piece.setMana(piece.getMana() - manaCost());
         } else {
@@ -17,6 +18,7 @@ abstract public class Movement
             }
         }
         dest.setPiece(piece);
+        origin.setPiece(null);
     }
 
     abstract public boolean isSpell();
