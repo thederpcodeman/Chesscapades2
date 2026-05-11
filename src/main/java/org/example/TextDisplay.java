@@ -23,7 +23,7 @@ public class TextDisplay implements Display {
     }
 
     public void display(Tile[][] tiles, int startX, int startY, int endX, int endY, String color){
-        this.display(tiles, color);
+        // this.display(tiles, color);
     }
 
     public void choice(String[] options, String color){

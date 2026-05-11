@@ -10,6 +10,7 @@ public class Pawn extends Piece {
         _color = color;
         _value = 3.0;
         _type = "Pawn";
+        setPromotion("Default");
         if (color.equals("White")){
             _direction = "Up";
         } else if (color.equals("Black")){

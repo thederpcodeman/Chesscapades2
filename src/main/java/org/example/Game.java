@@ -73,14 +73,20 @@ public class Game {
     }
 
     public Board promotePieces(Board board, Display disp) {
+        System.out.println("Promoting...");
         for (int y = 0; y < board.getY(); y++){
             for (int x = 0; x < board.getX(); x++){
                 Tile t = board.getTile(x, y);
                 if (t.isOccupied()){
+                    System.out.println(x + "," + y);
                     if (t.getPiece().getColor().equals(t.promotionType())){
+                        System.out.println("On PromotionSquare!" + x + "," + y);
                         if (t.getPiece().getPromotion().equals("Default")){
+                            System.out.println("Promotion!" + x + "," + y);
                             board = new Board(board);
                             board = defaultPromotion(x, y, board, disp, t.getPiece().getColor());
+                        } else{
+                            System.out.println(t.getPiece().getPromotion());
                         }
                     }
                 }

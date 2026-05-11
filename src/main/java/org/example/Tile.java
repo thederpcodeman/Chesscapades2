@@ -56,10 +56,14 @@ public class Tile
     }
 
     public boolean isPassable(){
-        return isOccupied();
+        return !isOccupied();
     }
 
     public String promotionType(){
         return _prom;
+    }
+
+    public void setPromotion(String promotionType){
+        _prom = promotionType;
     }
 }

@@ -110,6 +110,10 @@ public class Piece
         return _promotion;
     }
 
+    public void setPromotion(String promotion){
+        _promotion = promotion;
+    }
+
     public void addMove(Movement move){
         _movement.add(move);
     }

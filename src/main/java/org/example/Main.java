@@ -32,6 +32,26 @@ public class Main {
         board.getTile(5, 7).setPiece(new Bishop("White"));
         board.getTile(6, 7).setPiece(new Knight("White"));
         board.getTile(7, 7).setPiece(new Rook("White"));
+
+        board.getTile(0, 0).setPromotion("White");
+        board.getTile(1, 0).setPromotion("White");
+        board.getTile(2, 0).setPromotion("White");
+        board.getTile(3, 0).setPromotion("White");
+        board.getTile(4, 0).setPromotion("White");
+        board.getTile(5, 0).setPromotion("White");
+        board.getTile(6, 0).setPromotion("White");
+        board.getTile(7, 0).setPromotion("White");
+
+        board.getTile(0, 7).setPromotion("Black");
+        board.getTile(1, 7).setPromotion("Black");
+        board.getTile(2, 7).setPromotion("Black");
+        board.getTile(3, 7).setPromotion("Black");
+        board.getTile(4, 7).setPromotion("Black");
+        board.getTile(5, 7).setPromotion("Black");
+        board.getTile(6, 7).setPromotion("Black");
+        board.getTile(7, 7).setPromotion("Black");
+
+
         TextDisplay cli = new TextDisplay();
         Game game = new Game();
         game.runGame(board, "Test", cli);
