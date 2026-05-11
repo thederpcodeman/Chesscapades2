@@ -30,8 +30,8 @@ public class TextDisplay implements Display {
         System.out.println("-----");
         System.out.println(color + "'s turn");
         System.out.println("Promotion options:");
-        for (String option : options) {
-            System.out.println(option);
+        for (int i = 0; i < options.length; i++) {
+            System.out.println(i + ":" + options[i]);
         }
     }
 

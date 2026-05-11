@@ -43,7 +43,7 @@ public class Piece
             _effects.put(effect, piece._effects.get(effect));
         }
         _color = piece._color;
-        _promotion = "None";
+        _promotion = piece._promotion;
         _royal = piece._royal;
         _type = piece._type;
         _direction = piece._direction;
@@ -107,6 +107,7 @@ public class Piece
     }
 
     public String getPromotion(){
+        System.out.println(_name + " is my name and " + _promotion + " is my promotion");
         return _promotion;
     }
 

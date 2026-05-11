@@ -86,7 +86,7 @@ public class Game {
                             board = new Board(board);
                             board = defaultPromotion(x, y, board, disp, t.getPiece().getColor());
                         } else{
-                            System.out.println(t.getPiece().getPromotion());
+                            System.out.println(t.getPiece().getPromotion() + "," + t.getPiece().getName());
                         }
                     }
                 }
