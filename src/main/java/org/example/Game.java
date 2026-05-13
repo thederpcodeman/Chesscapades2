@@ -61,7 +61,14 @@ public class Game {
                     Movement move = board.getTile(choices[0], choices[1]).isLegalMove(choices[0], choices[1], choices[2], choices[3], board);
                     if (move != null) {
                         move.performMove(choices[0], choices[1], choices[2], choices[3], board);
-                        return;
+                        // en pessant
+                        if (board.getTile(choices[2], choices[3]).getEffect("En Route") > 0 &&
+                                board.getTile(choices[2], choices[3]).isOccupied() &&
+                                board.getTile(choices[2], choices[3]).getPiece().getType().equals("Pawn")) {
+                            // kill the piece
+                            board.getTile(board.getTile(choices[2], choices[3]).getEffect("En Route X").intValue(), board.getTile(choices[2], choices[3]).getEffect("En Route Y").intValue()).setPiece(null);
+
+                        }
                     }
                 }
             }

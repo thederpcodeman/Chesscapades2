@@ -3,9 +3,7 @@ package org.example.Movements;
 import org.example.Board;
 import org.example.Movement;
 
-import java.awt.*;
-
-public class PawnMove extends Movement {
+public class PawnEnPessant extends Movement {
 
     @Override
     public boolean isLegal(int sX, int sY, int dX, int dY, Board board){
@@ -14,7 +12,7 @@ public class PawnMove extends Movement {
         String direction = board.getTile(sX, sY).getPiece().getDirection();
         int mainDirection;
         int sideDirection;
-        if (direction.equals("Up")) {
+        if (direction.equals("Up")){
             mainDirection = deltaY;
             sideDirection = Math.abs(deltaX);
         } else if (direction.equals("Down")) {
@@ -30,24 +28,13 @@ public class PawnMove extends Movement {
             return false;
         }
 
-        // one space forwards
-        if (mainDirection == 1 && sideDirection == 0) {
-            if (board.getTile(dX, dY).isOccupied()) {
-                return false;
-            }
-            return true;
-        }
 
-        if (mainDirection == 1 && sideDirection == 1) {
-            if (board.getTile(dX, dY).isOccupied()) {
-                return true;
-            } else {
-                if (board.getTile(dX, dY).getEffect("En Route") > 0) {
-                    return true;
-                }
-            }
-        }
-        return false;
+
+    }
+
+    @Override
+    public void performMove(int sX, int sY, int dX, int dY, Board board){
+
     }
 
     @Override

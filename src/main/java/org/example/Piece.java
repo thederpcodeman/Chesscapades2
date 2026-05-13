@@ -131,5 +131,15 @@ public class Piece
         return _royal;
     }
 
+    public String getDirection(){
+        return _direction;
+    }
 
+    public void setDirection(String direction){
+        _direction = direction;
+    }
+
+    public String getType(){
+        return _type;
+    }
 }
